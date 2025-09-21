@@ -1,6 +1,6 @@
 # Sidekick-LangGraph-Agent
 
-A LangGraph-powered AI sidekick that uses tools (browser, search, Python, files, notifications) with an evaluator loop to meet explicit success criteria via a Gradio chat interface.
+This project works by combining a worker–evaluator loop with tool integration through LangGraph. When you enter a request and define success criteria in the Gradio UI, the message is passed to the Worker LLM, which is capable of calling tools like Playwright for browsing, Serper for search, Python REPL for quick code execution, file management, or sending push notifications. If the worker triggers a tool, LangGraph executes it through the ToolNode and returns the results back to the worker. Once the worker produces an answer, the Evaluator LLM checks the response against the given success criteria. If the criteria are met, the process ends; if not, or if the worker needs clarification, the feedback is looped back, and the cycle continues. This design ensures that the assistant not only performs tasks with external tools but also self-monitors through structured feedback to improve accuracy and relevance until completion.
 
 ## Features
 
