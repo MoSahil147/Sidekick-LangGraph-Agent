@@ -22,14 +22,15 @@ A LangGraph-powered AI sidekick that uses tools (browser, search, Python, files,
   - Reset button to start a fresh agent
 
 ## Architecture
-[Gradio UI] –(message + success criteria)–> [LangGraph]
+[Gradio UI] --(message + success criteria)--> [LangGraph]
       |                                             |
       v                                             v
-   display <—–– [Worker LLM] <—– [ToolNode executes tool calls]
+   display <----------- [Worker LLM] <----------- [ToolNode executes tool calls]
       ^                         
-      |                          –> [Evaluator LLM] –(feedback/decision)–>
-      |                                                   |          |
-      |                                               continue     stop
+      |                         
+      |-----------------------> [Evaluator LLM] --(feedback/decision)-->
+                                                      |          |
+                                                 continue      stop
 
 ## Tech Stack
 
