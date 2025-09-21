@@ -21,17 +21,6 @@ A LangGraph-powered AI sidekick that uses tools (browser, search, Python, files,
   - Inputs for your task and success criteria  
   - Reset button to start a fresh agent
 
-## Architecture
-[Gradio UI] --(message + success criteria)--> [LangGraph]
-      |                                             |
-      v                                             v
-   display <----------- [Worker LLM] <----------- [ToolNode executes tool calls]
-      ^                         
-      |                         
-      |-----------------------> [Evaluator LLM] --(feedback/decision)-->
-                                                      |          |
-                                                 continue      stop
-
 ## Tech Stack
 
 - Python
